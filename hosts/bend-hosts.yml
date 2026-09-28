@@ -1,0 +1,52 @@
+generated: '2026-09-27'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 3
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - support
+  - website
+hosts:
+- host: api.bend.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: bend.com
+  role: api
+  relation: own
+- host: bend.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - TermsOfService
+  - PrivacyPolicy
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: bend.com
+  role: website
+  relation: own
+- host: support.bend.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - Support
+  serves: []
+  registrable_domain: bend.com
+  role: support
+  relation: own
